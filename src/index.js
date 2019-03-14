@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import WebFont from 'webfontloader';
 
 import './index.css';
 import { sizes, light, dark, mdInactive } from './config/mappings';
@@ -17,14 +16,16 @@ class MaterialIcon extends Component {
 
         this.onFontActive = this.onFontActive.bind(this);
         this.processProps = this.processProps.bind(this);
-
-        WebFont.load({
-            google: {
-                families: ['Material+Icons']
-            },
-            timeout:5000,
-            fontactive: this.onFontActive
-        })
+        if (typeof window !== 'undefined') {
+            const WebFont = require('webfontloader')
+            WebFont.load({
+                google: {
+                    families: ['Material+Icons']
+                },
+                timeout:5000,
+                fontactive: this.onFontActive
+            })
+        }
     }
 
     componentDidMount() {

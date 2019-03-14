@@ -1,16 +1,16 @@
 (function (global, factory) {
     if (typeof define === "function" && define.amd) {
-        define(['exports', './palette', 'react', 'prop-types', './config/mappings', 'webfontloader', './index.css'], factory);
+        define(['exports', './palette', 'react', 'prop-types', './config/mappings', './index.css'], factory);
     } else if (typeof exports !== "undefined") {
-        factory(exports, require('./palette'), require('react'), require('prop-types'), require('./config/mappings'), require('webfontloader'), require('./index.css'));
+        factory(exports, require('./palette'), require('react'), require('prop-types'), require('./config/mappings'), require('./index.css'));
     } else {
         var mod = {
             exports: {}
         };
-        factory(mod.exports, global.palette, global.react, global.propTypes, global.mappings, global.webfontloader, global.index);
+        factory(mod.exports, global.palette, global.react, global.propTypes, global.mappings, global.index);
         global.index = mod.exports;
     }
-})(this, function (exports, _palette, _react, _propTypes, _mappings, WebFont) {
+})(this, function (exports, _palette, _react, _propTypes, _mappings) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
@@ -127,15 +127,6 @@
 
             _this.onFontActive = _this.onFontActive.bind(_this);
             _this.processProps = _this.processProps.bind(_this);
-            if (typeof window !== 'undefined') {
-                WebFont.load({
-                    google: {
-                        families: ['Material+Icons']
-                    },
-                    timeout: 5000,
-                    fontactive: _this.onFontActive
-                });
-            }
             return _this;
         }
 

@@ -1,6 +1,6 @@
 {
   "name": "material-icons-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Google material icons implementation for React",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "prepublish": "babel --plugins transform-es2015-modules-umd src --ignore __tests__ --copy-files --out-dir ./dist",
-    "build": "npm run test && babel --plugins transform-es2015-modules-umd src --ignore __tests__ --copy-files --out-dir ./dist",
+    "build": "babel --plugins transform-es2015-modules-umd src --ignore __tests__ --copy-files --out-dir ./dist",
     "lint": "eslint ./src",
     "lintfix": "eslint ./src --fix",
     "testonly": "mocha $npm_package_options_mocha",
@@ -67,6 +67,5 @@
     "prop-types": "^15.6.1",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
-    "webfontloader": "^1.6.28"
   }
 }

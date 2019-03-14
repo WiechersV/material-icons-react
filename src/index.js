@@ -16,16 +16,6 @@ class MaterialIcon extends Component {
 
         this.onFontActive = this.onFontActive.bind(this);
         this.processProps = this.processProps.bind(this);
-        if (typeof window !== 'undefined') {
-            const WebFont = require('webfontloader')
-            WebFont.load({
-                google: {
-                    families: ['Material+Icons']
-                },
-                timeout:5000,
-                fontactive: this.onFontActive
-            })
-        }
     }
 
     componentDidMount() {
